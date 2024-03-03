@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Login</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url('https://i.ibb.co/kQtcrmP/835accaf3f5b55cc5312bc6d73a6a0b7.jpg')  no-repeat center center fixed;
+  background-size: cover;
+  
+
+}
+
+.container {
+  width: 90%;
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+
+  buorder-radius: 50px;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 20px 30px black;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(14,157,43);
+}
+
+#error-msg {
+  color: red;
+  text-align: center;
+}
+marquee{
+  color:red;
+  background-color: rgb(0,19,20);
+  border-radius: 5px;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form id="loginForm">
+      <h2>Login</h2>
+      <div class="input-group">
+        <label for="username">Nome de usuário:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit">Entrar</button>
+      <p id="error-msg"></p>
+    </form>
+  </div>
+  <script>
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
+
+  var users = [
+    { username: 'Gr', password: '12' },
+    { username: 'her', password: '123' },
+    { username: 'meila', password: '1234' },
+    { username: 'jerso', password: '123456' }
+  ];
+
+  var authenticated = users.some(function(user) {
+    return user.username === username && user.password === password;
+  });
+
+  if (authenticated) {
+    alert('Login bem-sucedido!');
+window.location.href = 'https://d6ypgm.mimo.run/index.html'; // R
+    // Aqui você pode redirecionar o usuário para outra página ou executar outras ações
+  }else {
+
+    document.getElementById('error-msg').textContent = 'Nome de usuário ou senha inválidos.';
+  
+    window.location.href = 'https://vu63qp.mimo.run/index.html'; // Redireciona para erro402.html se o login falhar
+  }
+});
+    
+
+  </script>
+  <marquee>predict TM</marquee>
+</body>
+</html>
